@@ -50,3 +50,20 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# STM32CubeIDE
+Debug/
+Release/
+.metadata/
+.settings/
+*.launch
+
+# IAR
+EWARM/
+
+# STM32CubeMX
+*.mxproject.user
+
+# OS
+.DS_Store
+Thumbs.db

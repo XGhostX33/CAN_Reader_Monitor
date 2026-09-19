@@ -1,0 +1,69 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    stm32f1xx_it.c
+  * @brief   Interrupt Service Routines.
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+#include "main.h"
+#include "stm32f1xx_it.h"
+
+/* USER CODE BEGIN Includes */
+/* USER CODE END Includes */
+
+/* External variables --------------------------------------------------------*/
+extern CAN_HandleTypeDef hcan;
+
+/* ========================================================================== */
+/*            Cortex-M3 Processor Interruption and Exception Handlers         */
+/* ========================================================================== */
+
+void NMI_Handler(void)
+{
+    while (1) {}
+}
+
+void HardFault_Handler(void)
+{
+    while (1) {}
+}
+
+void MemManage_Handler(void)
+{
+    while (1) {}
+}
+
+void BusFault_Handler(void)
+{
+    while (1) {}
+}
+
+void UsageFault_Handler(void)
+{
+    while (1) {}
+}
+
+void SVC_Handler(void) {}
+void DebugMon_Handler(void) {}
+void PendSV_Handler(void) {}
+
+void SysTick_Handler(void)
+{
+    HAL_IncTick();
+}
+
+/* ========================================================================== */
+/* STM32F1xx Peripheral Interrupt Handlers                                    */
+/* ========================================================================== */
+
+void USB_HP_CAN1_TX_IRQHandler(void)
+{
+    HAL_CAN_IRQHandler(&hcan);
+}
+
+void USB_LP_CAN1_RX0_IRQHandler(void)
+{
+    HAL_CAN_IRQHandler(&hcan);
+}
